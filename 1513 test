@@ -1,0 +1,181 @@
+import Scenes                                                                                                                                                                          
+import Igis                                                                                                                                                                            
+import Foundation                                                                                                                                                                      
+class Background : RenderableEntity, EntityMouseClickHandler {                                                                                                                         
+    let maxPattern = 9                                                                                                                                                                 
+    var currentPattern = 1                                                                                                                                                             
+    var didRender = false                                                                                                                                                              
+    var rect: Rect?                                                                                                                                                                    
+    let image1 : Image                                                                                                                                                                 
+    let image2 : Image                                                                                                                                                                 
+    let image3 : Image                                                                                                                                                                 
+    let image4 : Image                                                                                                                                                                 
+    let image5 : Image                                                                                                                                                                 
+    let image6 : Image                                                                                                                                                                 
+    let image7 : Image                                                                                                                                                                 
+    let image8 : Image                                                                                                                                                                 
+    let image9 : Image                                                                                                                                                                 
+                                                                                                                                                                                       
+    func renderLabel(canvas:Canvas, patternId:Int) {                                                                                                                                   
+        let text = Text(location:Point(x:15, y:40), text:"\(patternId)")                                                                                                               
+        text.font = "30pt Arial"                                                                                                                                                       
+        canvas.render(FillStyle(color:Color(.black)))                                                                                                                                  
+        canvas.render(text)                                                                                                                                                            
+    }                                                                                                                                                                                  
+     func renderPattern1(canvas: Canvas) {                                                                                                                                             
+            if image1.isReady {                                                                                                                                                        
+                image1.renderMode = .destinationPoint(Point(x:100, y:200))                                                                                                             
+                canvas.render(image1)                                                                                                                                                  
+            }                                                                                                                                                                          
+        }                                                                                                                                                                              
+        func renderPattern2(canvas: Canvas) {                                                                                                                                          
+            if image2.isReady {                                                                                                                                                        
+                image2.renderMode = .destinationPoint(Point(x:100, y:200))                                                                                                             
+                canvas.render(image2)                                                                                                                                                  
+            }                                                                                                                                                                          
+        }                                                                                                                                                                              
+        func renderPattern3(canvas: Canvas) {                                                                                                                                          
+            if image3.isReady {                                                                                                                                                        
+                image3.renderMode = .destinationPoint(Point(x:100, y:200))
+                canvas.render(image4)                                                                                                                                                  
+            }                                                                                                                                                                          
+        }                                                                                                                                                                              
+        func renderPattern5(canvas: Canvas) {                                                                                                                                          
+            if image5.isReady {                                                                                                                                                        
+                image5.renderMode = .destinationPoint(Point(x:100, y:200))                                                                                                             
+                canvas.render(image5)                                                                                                                                                  
+            }                                                                                                                                                                          
+        }                                                                                                                                                                              
+        func renderPattern6(canvas: Canvas) {                                                                                                                                          
+            if image6.isReady {                                                                                                                                                        
+                image6.renderMode = .destinationPoint(Point(x:100, y:200))                                                                                                             
+                canvas.render(image6)                                                                                                                                                  
+            }
+        }
+        func renderPattern7(canvas: Canvas) {                                                                                                                                          
+            if image7.isReady {                                                                                                                                                        
+                image7.renderMode = .destinationPoint(Point(x:100, y:200))                                                                                                             
+                canvas.render(image7)                                                                                                                                                  
+            }                                                                                                                                                                          
+        }                                                                                                                                                                              
+        func renderPattern8(canvas: Canvas) {                                                                                                                                          
+            if image8.isReady {                                                                                                                                                        
+                image8.renderMode = .destinationPoint(Point(x:100, y:200))                                                                                                             
+                canvas.render(image8)                                                                                                                                                  
+            }                                                                                                                                                                          
+        }                                                                                                                                                                              
+        func renderPattern9(canvas: Canvas) {                                                                                                                                          
+            if image9.isReady {                                                                                                                                                        
+                image9.renderMode = .destinationPoint(Point(x:100, y:200))                                                                                                             
+                canvas.render(image9)                                                                                                                                                  
+            }                                                                                                                                                                          
+        }                                                                                                                                                                              
+                                                                                                                                                                                       
+    init() {                                                                                                                                                                           
+                                                                                                                                                                                       
+        guard let image1URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+        guard let image2URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+        guard let image3URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+        guard let image4URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+        guard let image5URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+        guard let image6URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }
+        guard let image7URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+        guard let image8URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+        guard let image9URL = URL(string:"https://www.alimentarium.org/sites/default/files/media/image/2017-02/AL027-01_pomme_de_terre_0_0.jpg") else {                                
+            fatalError("failed to create URL for whitehouse")                                                                                                                          
+        }                                                                                                                                                                              
+                                                                                                                                                                                       
+        super.init(name:"Background")                                                                                                                                                  
+                                                                                                                                                                                       
+    }                                                                                                                                                                                  
+    override func setup(canvasSize:Size, canvas:Canvas) {                                                                                                                              
+        func makeRect(x:Int, y:Int, width: Int, height:Int, color:Color.Name, lineWidth: Int) {                                                                                        
+            let rect = Rect(topLeft:Point(x:x  , y:y ), size:Size(width:width, height:height))                                                                                         
+            let rectangle = Rectangle(rect:rect, fillMode:.stroke)                                                                                                                     
+            let strokeStyle = StrokeStyle(color:Color(color))                                                                                                                          
+            let lineWidth = LineWidth(width:lineWidth)                                                                                                                                 
+            canvas.render(strokeStyle, lineWidth, rectangle)                                                                                                                           
+        }
+        }                                                                                                                                                                              
+        dispatcher.registerEntityMouseClickHandler(handler:self)                                                                                                                       
+        rect = Rect(size: canvasSize)                                                                                                                                                  
+        canvas.setup(image1)                                                                                                                                                           
+        canvas.setup(image2)                                                                                                                                                           
+        canvas.setup(image3)                                                                                                                                                           
+        canvas.setup(image4)                                                                                                                                                           
+        canvas.setup(image5)                                                                                                                                                           
+        canvas.setup(image6)                                                                                                                                                           
+        canvas.setup(image7)                                                                                                                                                           
+        canvas.setup(image8)                                                                                                                                                           
+        canvas.setup(image9)                                                                                                                                                           
+    }                                                                                                                                                                                  
+                                                                                                                                                                                       
+    override func teardown() {                                                                                                                                                         
+        dispatcher.unregisterEntityMouseClickHandler(handler:self)                                                                                                                     
+    }                                                                                                                                                                                  
+                                                                                                                                                                                       
+    override func boundingRect() -> Rect {                                                                                                                                             
+        if let rect = rect {                                                                                                                                                           
+            return rect
+            } else {                                                                                                                                                                       
+            return Rect()                                                                                                                                                              
+        }                                                                                                                                                                              
+    }                                                                                                                                                                                  
+                                                                                                                                                                                       
+    override func render(canvas:Canvas) {                                                                                                                                              
+        if let canvasSize = canvas.canvasSize, !didRender {                                                                                                                            
+            let clearRect = Rect(topLeft:Point(x:0, y:0), size:canvasSize)                                                                                                             
+            let clearRectangle = Rectangle(rect:clearRect, fillMode:.clear)                                                                                                            
+            canvas.render(clearRectangle)                                                                                                                                              
+        }                                                                                                                                                                              
+                                                                                                                                                                                       
+                                                                                                                                                                                       
+        switch (currentPattern) {                                                                                                                                                      
+        case 1:                                                                                                                                                                        
+            renderPattern1(canvas:canvas)                                                                                                                                              
+        case 2:                                                                                                                                                                        
+            renderPattern2(canvas:canvas)                                                                                                                                              
+        case 3:                                                                                                                                                                        
+            renderPattern3(canvas:canvas)
+            case 4:                                                                                                                                                                        
+            renderPattern4(canvas:canvas)                                                                                                                                              
+        case 5:                                                                                                                                                                        
+            renderPattern5(canvas:canvas)                                                                                                                                              
+        case 6:                                                                                                                                                                        
+            renderPattern6(canvas:canvas)                                                                                                                                              
+        case 7:                                                                                                                                                                        
+            renderPattern7(canvas:canvas)                                                                                                                                              
+        case 8:                                                                                                                                                                        
+            renderPattern8(canvas:canvas)                                                                                                                                              
+        case 9:                                                                                                                                                                        
+            renderPattern9(canvas:canvas)                                                                                                                                              
+        default:                                                                                                                                                                       
+            fatalError("Unexpected pattern: \(currentPattern)")                                                                                                                        
+        }                                                                                                                                                                              
+        didRender = true                                                                                                                                                               
+    }                                                                                                                                                                                  
+    func onEntityMouseClick(globalLocation: Point) {                                                                                                                                   
+        currentPattern += 1                                                                                                                                                            
+        if (currentPattern > maxPattern) {
+        currentPattern = 1                                                                                                                                                         
+        }                                                                                                                                                                              
+        didRender = false                                                                                                                                                              
+    }                                                                                                                                                                                  
+}
+           
