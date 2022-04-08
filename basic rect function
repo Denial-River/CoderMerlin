@@ -1,0 +1,23 @@
+import Scenes
+import Igis
+import Foundation
+
+class Background : RenderableEntity {
+    var gridRectangles : [Rectangle] = [Rectangle]();
+    init() {
+        super.init(name:"Background")
+    }
+    override func setup(canvasSize:Size, canvas:Canvas) {
+        func makeRect(x:Int, y:Int, width:Int, height:Int) -> Rectangle {
+            let rect = Rect(topLeft:Point(x:x, y:y), size:Size(width:width, height:height))
+            return Rectangle(rect:rect, fillMode:.stroke)
+        }
+        func addRect(x:Int, y:Int, width:Int, height:Int) {
+            gridRectangles.append(makeRect(x:x,y:y, width:width, height:height))
+        }
+        addRect(x:10,y:10,width:10,height:8)
+        for rec in gridRectangles {
+            canvas.render(rec)
+        }
+    }
+}
